@@ -58,11 +58,23 @@ Supporting modules that run internally:<br>
 | `utility.py`                 | Shared utility functions across all modules.                 |
 
 3. Temperature Binding (CITbind_dynamic.py) <br>
-After individual sample processing,  this script combines temperature data and calcium imaging results and generates aligned dual-axis plots.<br>
-**•** Generate summarized time-synchronized combined CSVs<br>
-**•** Generate plots of ΔF/F₀ and temperature (two versions: default and y-range limited)<br>
+After sample processing, this script combines calcium imaging results (merged_data.csv) with temperature recordings (Analog*.csv) to generate synchronized outputs.<br>
+**Workflow Overview:** 
 
-4.  Summary Visualization (data_summary.py) <br>
+
+&nbsp; &nbsp; &nbsp; &nbsp; **•** Time-synchronized combined CSVs<br>
+&nbsp; &nbsp; &nbsp; &nbsp; **•** Dual-axis plots of ΔF/F₀ and temperature<br>
+Each folder must contain:<br>
+&nbsp; &nbsp; &nbsp; &nbsp; **•** merged_data.csv<br>
+&nbsp; &nbsp; &nbsp; &nbsp; **•** Analog...csv<br>
+Outputs:<br>
+&nbsp; &nbsp; &nbsp; &nbsp; **•** samplename.csv<br>
+&nbsp; &nbsp; &nbsp; &nbsp; **•** samplename-temp.csv<br>
+&nbsp; &nbsp; &nbsp; &nbsp; **•** samplename-cbind.csv<br>
+&nbsp; &nbsp; &nbsp; &nbsp; **•** samplename-cbind.pdf<br>
+&nbsp; &nbsp; &nbsp; &nbsp; **•** samplename-cbind1.pdf<br>
+
+5.  Summary Visualization (data_summary.py) <br>
 Once all individual samples have been processed, this script: <br>
 **•** Computes mean ± SEM<br>
 **•** Outputs a stacked plot (combined_gradient_plot.png) showing:<br>
