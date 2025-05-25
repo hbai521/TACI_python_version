@@ -1,11 +1,13 @@
 # TACI_python_version
 
-TACI_Python_version is a python-based 3D calcium imaging analysis pipeline used in drosophila.
+This repository contains python codes and data analysis pipelines for 3D calcium imaging analysis on thermosensory neurons in drosophila.
 
 ---
 
 ## Table of Contents
 
+- [Project Overview](#Project-Overview)
+- [Data](#Data)
 - [Installation](#installation)
 - [Description](#description)
 - [File Overview](#file-overview)
@@ -20,6 +22,16 @@ TACI_Python_version is a python-based 3D calcium imaging analysis pipeline used 
 - [Contact](#contact)
 
 ---
+## Project Overview: 
+The Drosophila larval head is equipped with a highly organized peripheral sensory system composed of three main ganglia: the Dorsal Organ Ganglion (DOG), the Terminal Organ Ganglion (TOG), and the Ventral Organ Ganglion (VOG). These structures house distinct populations of sensory neurons that extend dendrites to the larval surface and specialize in detecting environmental cues. The DOG is primarily responsible for olfactory and thermosensory functions, while the TOG and VOG are largely involved in gustatory perception. Together, these ganglia enable the larva to navigate its environment through smell, taste, and temperature sensing.
+
+Our research focuses on thermosensory neurons within the DOG—Dorsal Organ Warm Cells (DOWCs) and Dorsal Organ Cool Cells (DOCCs)—which play key roles in larval temperature-guided behaviors.
+
+&nbsp; &nbsp; &nbsp; &nbsp; **•** Dorsal Organ Warm Cells (DOWCs)<br>
+Each DOG contains a pair of DOWCs. These neurons are activated by warming and play a key role in mediating warm avoidance behavior in Drosophila larvae. Genetic and functional studies have identified three Ionotropic Receptors (IRs) expressed in DOWCs—Ir68a, Ir93a, and Ir25a—which are essential for their thermosensory function.
+
+&nbsp; &nbsp; &nbsp; &nbsp; **•** Dorsal Organ Cool Cells (DOCCs)<br>
+Each DOG contains three of DOCCs, two A type and one B type, that respond to cooling. These neurons are mediating cool avoidance behavior in Drosophila larvae. Genetic and functional studies have identified three Ionotropic Receptors (IRs) expressed in DOCCs—Ir21a, Ir93a, and Ir25a—which are essential for their thermosensory function.
 
 ## Installation and python testing
 
