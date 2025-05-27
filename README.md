@@ -1,43 +1,70 @@
-# TACI_python_version
-
-This repository contains python codes and data analysis pipelines for 3D calcium imaging analysis on thermosensory neurons in drosophila.
+# 3D Calcium Imaging Analysis of Thermosensory Neurons in *Drosophila* Larvae
+This repository contains Python scripts and a complate data analysis pipeline for calcium imaging analysis of warm cells in "Drosophila" larvae. 
 
 ---
 
 ## Table of Contents
-- [Project Overview](#Project-Overview)
-- [Data](#Data)
+- [Requirements](#requirements)
 - [Installation](#installation)
-- [Description](#description)
-- [File Overview](#file-overview)
-- [Input and Output File Organization](#input-and-output-file-organization)
-- [Usage Instructions](#usage-instructions)
-  - [Generate Background](#generate-background)
-  - [Individual ΔF/F₀ Calculation](#individual-Δff₀-calculation)
-  - [Merging Results](#merging-results)
-- [Example Directory Structures](#example-directory-structures)
-- [Troubleshooting](#troubleshooting)
-- [License](#license)
-- [Contact](#contact)
+- [Folder Structure](#folder-structure)
+- [Installation](#installation)
+- [Workflow](#workflow)
+- [Example Data](#example-data)
+- [Troubleshooting Tips](#Troubleshooting-Tips)
+- [Citations](#Citations)
 
 ---
 
-## Projext Overview
+## Requirements
+**ImageJ (Fiji)** https://imagej.net/software/fiji/<br>
+**Python** https://www.python.org/<br>
 
+## Installation
 
-
-## Installation and python testing
-
-1. Clone or download this repository.
-2. Create a python virtrual environment.
-3. Install dependencies:
+- Clone or download this repository
+- Create a python virtrual environment
+- Install dependencies
    ```bash
    python -m pip install --upgrade pip
-   python -m pip install -r requirements.txt
-4. Test scripts usging demo data
+   ```
    ```bash
-   python .\CIAanalysis_120min.py -i path/demo_analysis --merge --cell_type DOWC
-   python .\CITbind_dynamic.py -i path/demo_cbind -n 2
+   python -m pip install -r requirements.txt
+   ```
+- Test scripts usging demo data.<br>
+
+   You can test the two main python scripts using demo datasets provided below.<br>
+   **Download demo datasets (Google Drive)** (https://drive.google.com/file/d/1bbxFN6tgdLj6vK6GaE3isFaxtnnAL_0F/view?usp=sharing)<br>
+   After downloading, extract the ZIP file. It contains two folders:<br>
+   &nbsp; &nbsp; &nbsp; &nbsp; **`demo_CIAnalysis_test`** - for testing '\CIAnalysis_120min.py'<br>
+   &nbsp; &nbsp; &nbsp; &nbsp; **`demo_CITbind_test`** - for testing '\CITbind_dynamic.py'<br>
+
+  **Run the following commands in your terminal:** <br>
+   ```bash
+   python .\CIAnalysis_120min.py -i path/demo_CIAnalysis_test --merge --cell_type DOWC
+   ```
+   ```bash
+   python .\CITbind_dynamic.py -i path/demo_CITbind_test -n 2
+   ```
+## Folder-Structure
+project/
+│
+├── MAX_DOWC001.tif            # Maximum projection for preview
+├── Analog - 2024-08-20.csv      # Temperature log
+├── DOWC001_stacks/           # 21 z-slice TIFFs (Z01 to Z21)
+│   ├── Z01.tif
+│   └── ...
+├── Analysis/
+│   ├── background_i.xlsx       # 5 background values per z-slice
+│   ├── Neuron 0/
+│   │   ├── Mean_Intensity03.csv
+│   │   └── ...
+│   ├── Neuron 1/
+│   ├── Mean_Intensity08.csv
+│   │   └── ...
+│   ├── results/                # Output CSVs and plots
+│   │   ├── merged_data/
+│   │       ├── merge_data.csv
+│   │       └── Average_dF.png
 
 ## Description 
 These python scripts allows batch processing and analysis of calcium imaging datasets collected from Drosophila larvae or other small model systems. 
